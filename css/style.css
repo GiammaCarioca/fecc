@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("Inter-Black.woff2?v=3.11") format("woff2"),
+    url("Inter-Black.woff?v=3.11") format("woff");
+}
+
+body {
+  background-color: #191b1f;
+  color: #e8e8e9;
+  font-family: "Inter", sans-serif;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  color: #26a8ee;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
