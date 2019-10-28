@@ -1,10 +1,28 @@
 @font-face {
   font-family: "Inter";
   font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("font-files/Inter-Medium.woff2?v=3.11") format("woff2"),
+    url("font-files/Inter-Medium.woff?v=3.11") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("font-files/Inter-Bold.woff2?v=3.11") format("woff2"),
+    url("font-files/Inter-Bold.woff?v=3.11") format("woff");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url("Inter-Black.woff2?v=3.11") format("woff2"),
-    url("Inter-Black.woff?v=3.11") format("woff");
+  src: url("font-files/Inter-Black.woff2?v=3.11") format("woff2"),
+    url("font-files/Inter-Black.woff?v=3.11") format("woff");
 }
 
 body {
@@ -24,20 +42,19 @@ h1 {
   width: 314px;
   line-height: 1.2;
   font-size: 32px;
-  font-weight: bolder;
+  font-weight: 900;
   margin-bottom: 30px;
 }
 
 label {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   display: block;
   padding-bottom: 8px;
 }
 
 .wrapper {
-  background-color: pink;
   display: flex;
   box-sizing: border-box;
   max-width: 320px;
@@ -52,7 +69,7 @@ label {
 input {
   border-style: none;
   font-size: 16px;
-  font-weight: normal;
+  font-weight: 500;
   color: #303030;
   padding: 12px;
   width: 100%;
@@ -92,7 +109,7 @@ button:focus {
   border: 1px solid #b80e3e;
   color: #b80e3e;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   padding: 22px 45px;
 }
 
@@ -100,9 +117,9 @@ button:focus {
   fill: #b80e3e;
 }
 
-.alert p {
+p {
   font-size: 14px;
-  font-weight: normal;
+  font-weight: 500;
   margin-top: 5px;
   margin-bottom: 0;
 }
@@ -112,7 +129,7 @@ button:focus {
   border: 1px solid #017a73;
   color: #017a73;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 700;
   padding: 22px 45px;
 }
 
@@ -122,7 +139,7 @@ button:focus {
 
 .check p {
   font-size: 14px;
-  font-weight: normal;
+  font-weight: 500;
   margin-top: 5px;
   margin-bottom: 0;
 }
