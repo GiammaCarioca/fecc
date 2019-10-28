@@ -46,14 +46,6 @@ h1 {
   margin-bottom: 30px;
 }
 
-label {
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  display: block;
-  padding-bottom: 8px;
-}
-
 .wrapper {
   display: flex;
   box-sizing: border-box;
@@ -66,6 +58,14 @@ label {
   box-shadow: 0px 2px 10px 0px rgba(23, 11, 41, 0.12);
 }
 
+label {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  padding-bottom: 8px;
+}
+
 input {
   border-style: none;
   font-size: 16px;
@@ -75,9 +75,8 @@ input {
   width: 100%;
 }
 
-input:invalid:not(:focus):not(:placeholder-shown) {
-  background-color: red;
-}
+/* input:invalid:not(:focus):not(:placeholder-shown) {
+} */
 
 button {
   background-color: #f9d270;
@@ -111,6 +110,7 @@ button:focus {
   font-size: 16px;
   font-weight: 700;
   padding: 22px 45px;
+  opacity: 0;
 }
 
 .alert-icon {
@@ -131,6 +131,7 @@ p {
   font-size: 16px;
   font-weight: 700;
   padding: 22px 45px;
+  opacity: 0;
 }
 
 .check-icon {

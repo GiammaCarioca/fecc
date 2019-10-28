@@ -2,14 +2,29 @@
   "use strict";
 
   const email = document.querySelector("#email");
-  console.log(email);
   const btn = document.querySelector("#submit");
-  console.log(btn);
+  const form = document.querySelector("form");
+  const alert = document.querySelector(".alert");
+  const check = document.querySelector(".check");
+
+  email.addEventListener("input", function(event) {
+    if (!email.validity.valid) {
+      alert.style.opacity === 1;
+    }
+  });
 
   btn.addEventListener(
     "click",
     function(event) {
-      console.log(event);
+      if (!email.validity.valid) {
+        alert.style.opacity = 1;
+        event.preventDefault();
+      } else {
+        form.style.display = "none";
+        check.style.opacity = 1;
+        email.value = "";
+        event.preventDefault();
+      }
     },
     false
   );
