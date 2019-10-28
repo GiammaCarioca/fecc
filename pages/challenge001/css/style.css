@@ -208,7 +208,9 @@ input:focus,
 .dialog-box {
   font-weight: 700;
   padding: 22px 26px;
+  visibility: hidden;
   opacity: 0;
+  transition: opacity 1s ease-out;
 }
 
 .validation {

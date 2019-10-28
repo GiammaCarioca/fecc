@@ -9,7 +9,8 @@
 
   email.addEventListener("input", function(event) {
     if (!email.validity.valid) {
-      alert.style.opacity === 1;
+      alert.style.opacity = 1;
+      alert.style.visibility = "visible";
     }
   });
 
@@ -18,10 +19,12 @@
     function(event) {
       if (!email.validity.valid) {
         alert.style.opacity = 1;
+        alert.style.visibility = "visible";
         event.preventDefault();
       } else {
         form.style.display = "none";
         check.style.opacity = 1;
+        check.style.visibility = "visible";
         email.value = "";
         event.preventDefault();
       }
