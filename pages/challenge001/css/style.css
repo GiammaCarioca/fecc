@@ -30,7 +30,7 @@ body {
   background-color: #f3f3f3;
   color: #4c2982;
   font-size: 18px;
-  max-width: 320px;
+  max-width: 360px;
   width: 100%;
   height: 100vh;
   margin: 0 auto;
@@ -49,7 +49,7 @@ h1 {
 .wrapper {
   display: flex;
   box-sizing: border-box;
-  max-width: 320px;
+  max-width: 360px;
   width: 100%;
   height: 46px;
   margin-bottom: 12px;
@@ -74,9 +74,6 @@ input {
   padding: 12px;
   width: 100%;
 }
-
-/* input:invalid:not(:focus):not(:placeholder-shown) {
-} */
 
 button {
   background-color: #f9d270;
@@ -109,12 +106,20 @@ button:focus {
   color: #b80e3e;
   font-size: 16px;
   font-weight: 700;
-  padding: 22px 45px;
+  padding: 22px 12px;
   opacity: 0;
+}
+
+svg > .alert-icon {
+  position: relative;
 }
 
 .alert-icon {
   fill: #b80e3e;
+  position: relative;
+  float: left;
+  top: -3px;
+  left: -6px;
 }
 
 p {
@@ -130,12 +135,20 @@ p {
   color: #017a73;
   font-size: 16px;
   font-weight: 700;
-  padding: 22px 45px;
+  padding: 22px 12px;
   opacity: 0;
+}
+
+svg > .check-icon {
+  position: relative;
 }
 
 .check-icon {
   fill: #017a73;
+  position: relative;
+  float: left;
+  top: -3px;
+  left: -6px;
 }
 
 .check p {
