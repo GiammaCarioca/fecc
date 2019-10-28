@@ -25,10 +25,23 @@
     url("font-files/Inter-Black.woff?v=3.11") format("woff");
 }
 
+:root {
+  --font-stack: "Inter", sans-serif;
+  --color-primary: #4c2982;
+  --color-secondary: #f9d170;
+  --color-bg: #f9f7f3;
+  --color-text: #252525;
+  --color-light: #f3f3f3;
+  --color-success: #067973;
+  --color-success-bg: #f5fffe;
+  --color-error: #b71540;
+  --color-error-bg: #fdeff3;
+}
+
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #f3f3f3;
-  color: #4c2982;
+  font-family: var(--font-stack);
+  background-color: var(--color-bg);
+  color: var(--color-primary);
   font-size: 18px;
   max-width: 360px;
   width: 100%;
@@ -37,6 +50,10 @@ body {
   display: flex;
   align-items: center;
 }
+
+/* .container {
+  background-color: pink;
+} */
 
 h1 {
   width: 314px;
@@ -70,16 +87,17 @@ input {
   border-style: none;
   font-size: 16px;
   font-weight: 500;
-  color: #303030;
+  background-color: var(--color-light);
+  color: var(--color-text);
   padding: 12px;
   width: 100%;
 }
 
 button {
-  background-color: #f9d270;
+  background-color: var(--color-secondary);
   border-style: none;
   cursor: pointer;
-  color: #4c2982;
+  color: var(--color-primary);
   width: 52px;
   height: 100%;
   padding: 8px;
@@ -88,7 +106,7 @@ button {
 
 input:focus,
 button:focus {
-  border: 1px solid #4c2982;
+  border: 1px solid var(--color-primary);
   outline: none;
 }
 
@@ -97,13 +115,13 @@ button:focus {
 }
 
 .arrow-right {
-  fill: #4c2982;
+  fill: var(--color-primary);
 }
 
 .alert {
-  background-color: #fdf0f3;
-  border: 1px solid #b80e3e;
-  color: #b80e3e;
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
   font-size: 16px;
   font-weight: 700;
   padding: 22px 12px;
@@ -115,7 +133,7 @@ svg > .alert-icon {
 }
 
 .alert-icon {
-  fill: #b80e3e;
+  fill: var(--color-error);
   position: relative;
   float: left;
   top: -3px;
@@ -130,9 +148,9 @@ p {
 }
 
 .check {
-  background-color: #f6fffe;
-  border: 1px solid #017a73;
-  color: #017a73;
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
   font-size: 16px;
   font-weight: 700;
   padding: 22px 12px;
@@ -144,7 +162,7 @@ svg > .check-icon {
 }
 
 .check-icon {
-  fill: #017a73;
+  fill: var(--color-success);
   position: relative;
   float: left;
   top: -3px;
