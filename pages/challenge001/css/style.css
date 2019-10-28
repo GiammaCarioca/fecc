@@ -73,39 +73,6 @@ select {
   font: inherit;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/**
- * Utils
- */
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-}
-
-.flow {
-  --flow-space: 1em;
-}
-
-.flow > * + * {
-  margin-top: var(--flow-space);
-}
-
 /**
  * GLOBAL
  */
@@ -173,28 +140,19 @@ p {
   fill: var(--color-primary);
 }
 
-svg > .alert-icon {
+.icon-wrapper {
   position: relative;
+  float: left;
+  top: -3px;
+  left: -6px;
 }
 
-.alert-icon {
+.icon-alert {
   fill: var(--color-error);
-  position: relative;
-  float: left;
-  top: -3px;
-  left: -6px;
 }
 
-svg > .check-icon {
-  position: relative;
-}
-
-.check-icon {
+.icon-check {
   fill: var(--color-success);
-  position: relative;
-  float: left;
-  top: -3px;
-  left: -6px;
 }
 
 /**
@@ -249,7 +207,7 @@ input:focus,
  */
 .dialog-box {
   font-weight: 700;
-  padding: 22px 12px;
+  padding: 22px 26px;
   opacity: 0;
 }
 
@@ -263,4 +221,8 @@ input:focus,
   background-color: var(--color-success-bg);
   border: 1px solid var(--color-success);
   color: var(--color-success);
+}
+
+.content {
+  padding-left: 28px;
 }
