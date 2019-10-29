@@ -192,6 +192,15 @@ input {
   height: 100%;
 }
 
+.btn svg {
+  transition: width 0.4s, height 0.4s;
+}
+
+.btn svg:hover {
+  width: 100%;
+  height: 100%;
+}
+
 ::-moz-focus-inner {
   border: 0;
 }
