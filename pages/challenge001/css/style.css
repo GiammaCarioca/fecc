@@ -137,7 +137,9 @@ p {
   fill: var(--color-primary);
 }
 
-.icon-wrapper {
+svg.icon-wrapper {
+  width: 24px;
+  height: 24px;
   position: relative;
   float: left;
   top: -3px;
