@@ -25,11 +25,11 @@
         email.focus();
         return;
       }
-
-      form.style.position = "absolute";
-      form.style.opacity = 0;
+      check.focus();
+      check.style.outline = "none";
       check.style.visibility = "visible";
       check.style.opacity = 1;
+      form.parentNode.removeChild(form);
       email.value = "";
     },
     false
