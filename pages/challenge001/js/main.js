@@ -29,8 +29,8 @@
       check.style.outline = "none";
       check.style.visibility = "visible";
       check.style.opacity = 1;
-      form.parentNode.removeChild(form);
       email.value = "";
+      form.parentNode.removeChild(form);
     },
     false
   );
