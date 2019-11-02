@@ -2,7 +2,7 @@
 	'use strict';
 
 	const form = document.querySelector('#signup');
-	const email = document.querySelector('input[type=email]');
+	const email = document.querySelector('[type=email]');
 	const alert = document.querySelector('#alert');
 	const check = document.querySelector('#check');
 
@@ -12,8 +12,8 @@
 	email.addEventListener(
 		'input',
 		function() {
-			alert.style.visibility = 'hidden';
 			alert.style.opacity = 0;
+			alert.classList.remove('fade-slide-up');
 		},
 		false
 	);
@@ -24,15 +24,16 @@
 			event.preventDefault();
 			if (!email.validity.valid) {
 				alert.style.visibility = 'visible';
-				alert.style.opacity = 1;
+				alert.classList.add('fade-slide-up');
 				email.focus();
 				return;
 			}
+
+			email.value = '';
 			check.focus();
 			check.style.outline = 'none';
 			check.style.visibility = 'visible';
-			check.style.opacity = 1;
-			email.value = '';
+			check.classList.add('fade-slide-up');
 			form.parentNode.removeChild(form);
 		},
 		false

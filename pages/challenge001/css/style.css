@@ -231,10 +231,10 @@ input:focus,
 	font-weight: 700;
 	padding: 22px 26px;
 	visibility: hidden;
-	opacity: 0;
-	-webkit-transition: opacity 1s ease-out;
-	-o-transition: opacity 1s ease-out;
-	transition: opacity 1s ease-out;
+}
+
+.fade-slide-up {
+	animation: fade-slide-up 0.5s ease-out forwards;
 }
 
 .validation {
@@ -251,4 +251,19 @@ input:focus,
 
 .content {
 	padding-left: 28px;
+}
+
+/**
+ * Animations
+ */
+@keyframes fade-slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform: none;
+	}
 }
