@@ -24,7 +24,7 @@
 		function(event) {
 			event.preventDefault();
 			if (!email.validity.valid) {
-				email.focus();
+				alert.focus();
 				email.style.outline = 'none';
 				alert.style.visibility = 'visible';
 				alert.style.display = 'block';
