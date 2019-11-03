@@ -11,29 +11,8 @@
 	</head>
 	<body>
 		<h1>Sign up for the latest updates</h1>
+
 		<form action="confirmation.html" id="signup">
-			<label for="email">Email address</label>
-			<div class="wrapper">
-				<input type="email" name="email" id="email" placeholder=" " required />
-				<button
-					type="submit"
-					aria-label="press the arrow button to submit"
-					class="btn"
-				>
-					<svg
-						aria-label="arrow right"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 24 24"
-						width="80%"
-						height="80%"
-					>
-						<path
-							class="arrow-right-icon"
-							d="M11.293 5.707L16.586 11H5a1 1 0 000 2h11.586l-5.293 5.293a.999.999 0 101.414 1.414l7-7a1.006 1.006 0 000-1.414l-7-7a.999.999 0 10-1.414 1.414z"
-						/>
-					</svg>
-				</button>
-			</div>
 			<!-- Email invalid alert -->
 			<div id="alert" class="dialog-box validation">
 				<svg
@@ -51,23 +30,56 @@
 					<p>Like: person@inbox.com</p>
 				</div>
 			</div>
-		</form>
-		<!-- Email sent confirmation -->
-		<div id="check" class="dialog-box confirmation" tabindex="-1">
-			<svg
-				class="icon-wrapper"
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 24 24"
-			>
-				<path
-					class="icon-check"
-					d="M19.293 5.293L9 15.586l-4.293-4.293a.999.999 0 10-1.414 1.414l5 5a.999.999 0 001.414 0l11-11a.999.999 0 10-1.414-1.414z"
-				/>
-			</svg>
-			<div class="content" role="alert">
-				<strong>Yay! Thank you</strong>
-				<p>We've sent a confirmation link to your inbox</p>
+
+			<!-- Email sent confirmation -->
+			<div id="check" class="dialog-box confirmation" tabindex="-1">
+				<svg
+					class="icon-wrapper"
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 24 24"
+				>
+					<path
+						class="icon-check"
+						d="M19.293 5.293L9 15.586l-4.293-4.293a.999.999 0 10-1.414 1.414l5 5a.999.999 0 001.414 0l11-11a.999.999 0 10-1.414-1.414z"
+					/>
+				</svg>
+				<div class="content" role="alert">
+					<strong>Yay! Thank you</strong>
+					<p>We've sent a confirmation link to your inbox</p>
+				</div>
 			</div>
-		</div>
+
+			<div class="container" id="container">
+				<label for="email">Email address</label>
+				<div class="wrapper">
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder=" "
+						required
+					/>
+					<button
+						type="submit"
+						aria-label="press the arrow button to submit"
+						class="btn"
+						id="btn"
+					>
+						<svg
+							aria-label="arrow right"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+							width="100%"
+							height="100%"
+						>
+							<path
+								class="arrow-right-icon"
+								d="M11.293 5.707L16.586 11H5a1 1 0 000 2h11.586l-5.293 5.293a.999.999 0 101.414 1.414l7-7a1.006 1.006 0 000-1.414l-7-7a.999.999 0 10-1.414 1.414z"
+							/>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</form>
 	</body>
 </html>
