@@ -34,6 +34,7 @@
  */
 body {
 	font-family: var(--font-base-family, sans-serif);
+	display: -ms-grid;
 	display: grid;
 	place-items: center;
 	background: var(--color-light);
@@ -71,30 +72,6 @@ p {
 }
 
 /**
- * SVG ICONS
- */
-.arrow-right-icon {
-	fill: var(--color-primary);
-}
-
-.icon-wrapper {
-	width: 24px;
-	height: 24px;
-	position: relative;
-	float: left;
-	top: -3px;
-	left: -6px;
-}
-
-.icon-alert {
-	fill: var(--color-error);
-}
-
-.icon-check {
-	fill: var(--color-success);
-}
-
-/**
  * LAYOUT
  */
 .signup {
@@ -108,7 +85,7 @@ p {
 	animation: fade-slide-down 0.5s 0.5s ease-out forwards;
 }
 
-.container {
+.form-block {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -127,6 +104,8 @@ p {
 }
 
 .inline-field-control input {
+	-webkit-box-flex: 1;
+	-ms-flex: auto;
 	flex: auto;
 }
 
@@ -164,10 +143,13 @@ input:invalid {
 }
 
 .btn:hover {
+	-webkit-filter: brightness(1.05);
 	filter: brightness(1.05);
 }
 
 .btn svg {
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
 	transform: translateY(1px); /* Optical adjustment */
 }
 
@@ -228,6 +210,18 @@ input:invalid {
 
 .content {
 	padding-left: 28px;
+}
+
+/**
+ * SVG ICONS
+ */
+.icon-alert {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	float: left;
+	top: -3px;
+	left: -6px;
 }
 
 /**

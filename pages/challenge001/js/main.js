@@ -2,7 +2,7 @@
 	'use strict';
 
 	const init = _ => {
-		const container = document.querySelector('#container');
+		const formBlock = document.querySelector('#formBlock');
 		const btn = document.querySelector('#btn');
 		const form = document.querySelector('#signUpForm');
 		const email = document.querySelector('[type=email]');
@@ -28,7 +28,7 @@
 		function hideForm() {
 			email.style.display = 'none';
 			btn.style.display = 'none';
-			container.style.opacity = 0;
+			formBlock.style.opacity = 0;
 		}
 
 		function handleSubmit() {
