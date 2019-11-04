@@ -1,56 +1,60 @@
 (function() {
 	'use strict';
 
-	const container = document.querySelector('#container');
-	const btn = document.querySelector('#btn');
-	const form = document.querySelector('#signup');
-	const email = document.querySelector('[type=email]');
-	const alert = document.querySelector('#alert');
-	const check = document.querySelector('#check');
+	const init = _ => {
+		const container = document.querySelector('#container');
+		const btn = document.querySelector('#btn');
+		const form = document.querySelector('#signUpForm');
+		const email = document.querySelector('[type=email]');
+		const alert = document.querySelector('#alert');
+		const check = document.querySelector('#check');
 
-	email.value = '';
+		email.value = '';
 
-	function showAlert() {
-		alert.focus();
-		alert.style.visibility = 'visible';
-		alert.style.display = 'block';
-		alert.classList.add('pop-in');
-	}
-
-	function showConfirmation() {
-		check.focus();
-		check.style.visibility = 'visible';
-		check.classList.add('pop-in');
-		check.style.top = 0;
-	}
-
-	function hideForm() {
-		email.style.display = 'none';
-		btn.style.display = 'none';
-		container.style.opacity = 0;
-	}
-
-	function handleSubmit() {
-		event.preventDefault();
-		if (!email.validity.valid) {
-			showAlert();
-			return;
+		function showAlert() {
+			alert.focus();
+			alert.style.visibility = 'visible';
+			alert.style.display = 'block';
+			alert.classList.add('pop-in');
 		}
 
-		showConfirmation();
-		hideForm();
-	}
+		function showConfirmation() {
+			check.focus();
+			check.style.visibility = 'visible';
+			check.classList.add('pop-in');
+			check.style.top = 0;
+		}
 
-	if (!form) return;
-	form.setAttribute('novalidate', true);
+		function hideForm() {
+			email.style.display = 'none';
+			btn.style.display = 'none';
+			container.style.opacity = 0;
+		}
 
-	email.addEventListener(
-		'input',
-		function() {
-			alert.classList.remove('pop-in');
-		},
-		false
-	);
+		function handleSubmit() {
+			event.preventDefault();
+			if (!email.validity.valid) {
+				showAlert();
+				return;
+			}
 
-	form.addEventListener('submit', handleSubmit, false);
+			showConfirmation();
+			hideForm();
+		}
+
+		if (!form) return;
+		form.setAttribute('novalidate', true);
+
+		email.addEventListener(
+			'input',
+			function() {
+				alert.classList.remove('pop-in');
+			},
+			false
+		);
+
+		form.addEventListener('submit', handleSubmit, false);
+	};
+
+	init();
 })();
