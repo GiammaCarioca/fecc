@@ -202,6 +202,12 @@ input {
 	font-weight: 500;
 	padding: 12px;
 	width: 100%;
+	outline: none;
+}
+
+input:invalid {
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 
 /**

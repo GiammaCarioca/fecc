@@ -8,6 +8,39 @@
 	const alert = document.querySelector('#alert');
 	const check = document.querySelector('#check');
 
+	email.value = '';
+
+	function showAlert() {
+		alert.focus();
+		alert.style.visibility = 'visible';
+		alert.style.display = 'block';
+		alert.classList.add('pop-in');
+	}
+
+	function showConfirmation() {
+		check.focus();
+		check.style.visibility = 'visible';
+		check.classList.add('pop-in');
+		check.style.top = 0;
+	}
+
+	function hideForm() {
+		email.style.display = 'none';
+		btn.style.display = 'none';
+		container.style.opacity = 0;
+	}
+
+	function handleSubmit() {
+		event.preventDefault();
+		if (!email.validity.valid) {
+			showAlert();
+			return;
+		}
+
+		showConfirmation();
+		hideForm();
+	}
+
 	if (!form) return;
 	form.setAttribute('novalidate', true);
 
@@ -19,29 +52,5 @@
 		false
 	);
 
-	form.addEventListener(
-		'submit',
-		function(event) {
-			event.preventDefault();
-			if (!email.validity.valid) {
-				alert.focus();
-				email.style.outline = 'none';
-				alert.style.visibility = 'visible';
-				alert.style.display = 'block';
-				alert.classList.add('pop-in');
-				return;
-			}
-
-			email.value = '';
-			email.style.display = 'none';
-			btn.style.display = 'none';
-			container.style.opacity = 0;
-			check.focus();
-			check.style.outline = 'none';
-			check.style.visibility = 'visible';
-			check.style.top = 0;
-			check.classList.add('pop-in');
-		},
-		false
-	);
+	form.addEventListener('submit', handleSubmit, false);
 })();
