@@ -2,20 +2,18 @@
 	'use strict';
 
 	const init = _ => {
-		const formBlock = document.querySelector('#formBlock');
-		const btn = document.querySelector('#btn');
-		const form = document.querySelector('#signUpForm');
-		const email = document.querySelector('[type=email]');
+		const formFragment = document.querySelector('#formFragment');
+		const formElement = document.querySelector('#signUpForm');
+		const email = document.querySelector('#email');
+		const button = document.querySelector('#button');
 		const alert = document.querySelector('#alert');
 		const check = document.querySelector('#check');
-
-		email.value = '';
 
 		function showAlert() {
 			alert.focus();
 			alert.style.visibility = 'visible';
-			alert.style.display = 'block';
 			alert.classList.add('pop-in');
+			alert.style.display = 'block';
 		}
 
 		function showConfirmation() {
@@ -27,8 +25,8 @@
 
 		function hideForm() {
 			email.style.display = 'none';
-			btn.style.display = 'none';
-			formBlock.style.opacity = 0;
+			button.style.display = 'none';
+			formFragment.style.opacity = 0;
 		}
 
 		function handleSubmit() {
@@ -42,8 +40,10 @@
 			hideForm();
 		}
 
-		if (!form) return;
-		form.setAttribute('novalidate', true);
+		if (!formElement) return;
+		formElement.setAttribute('novalidate', true);
+
+		email.value = '';
 
 		email.addEventListener(
 			'input',
@@ -53,7 +53,7 @@
 			false
 		);
 
-		form.addEventListener('submit', handleSubmit, false);
+		formElement.addEventListener('submit', handleSubmit, false);
 	};
 
 	init();
