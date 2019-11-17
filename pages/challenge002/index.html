@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Toggle Switch</title>
+		<link rel="stylesheet" href="css/global.css" />
+		<script src="js/app.js" defer></script>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				background: #e5e5e5;
+				margin: 0;
+				height: 100vh;
+				font-family: Lato;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				transition: background-color 0.2s linear;
+			}
+
+			body.dark {
+				background-color: #292c35;
+			}
+
+			body.dark label {
+				color: #fff;
+			}
+
+			label {
+				font-weight: 900;
+				text-transform: uppercase;
+				color: #252525;
+
+				margin-right: 0.5em;
+			}
+
+			/* button */
+			.toggle {
+				border: none;
+				width: 56px;
+				height: 28px;
+				background: none;
+				background: #0984e3;
+				border-radius: 14px;
+				padding: 5px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: relative;
+			}
+
+			/* thumb */
+			.toggle::before {
+				content: '';
+				position: absolute;
+				left: 3px;
+				width: 22px;
+				height: 22px;
+				background: linear-gradient(
+						229.84deg,
+						rgba(255, 255, 255, 0) 14.29%,
+						rgba(48, 48, 48, 0.15) 81.82%
+					),
+					#ffffff;
+				box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+				border-radius: 14px;
+			}
+
+			.toggle:focus {
+				outline: none;
+			}
+
+			.dark-mode {
+				background: #032b43;
+			}
+
+			.dark-mode::before {
+				transform: translateX(28px);
+			}
+
+			/* [aria-pressed='true'] {
+				background: #032b43;
+			} */
+
+			/* .toggle:focus::before {
+				box-sizing: border-box;
+				border: 2px solid #4a4a4a;
+			} */
+		</style>
+	</head>
+	<body>
+		<label for="toggle">Dark Mode</label>
+		<button
+			class="toggle"
+			type="button"
+			id="toggle"
+			name="theme"
+			aria-pressed="false"
+			aria-label="dark mode"
+		>
+			<svg
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				viewBox="0 0 32 32"
+			>
+				<title>moon-fill</title>
+				<path
+					fill="#B9C6D3"
+					d="M24.633 22.184c-8.188 0-14.82-6.637-14.82-14.82 0-2.695 0.773-5.188 2.031-7.363-6.824 1.968-11.844 8.187-11.844 15.644 0 9.031 7.32 16.355 16.352 16.355 7.457 0 13.68-5.023 15.648-11.844-2.18 1.254-4.672 2.028-7.367 2.028z"
+				></path>
+			</svg>
+			<svg
+				version="1.1"
+				xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				viewBox="0 0 32 32"
+			>
+				<title>sun-fill</title>
+				<path
+					fill="#FFE4A1"
+					d="M16.001 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 7.999-3.582 7.999-8s-3.581-8-7.999-8v0zM14 2c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM4 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM2 14c1.105 0 2 0.895 2 2 0 1.107-0.895 2-2 2s-2-0.893-2-2c0-1.105 0.895-2 2-2zM4 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 30c0-1.109 0.895-2 2-2 1.108 0 2 0.891 2 2 0 1.102-0.892 2-2 2-1.105 0-2-0.898-2-2zM24 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM30 18c-1.104 0-2-0.896-2-2 0-1.107 0.896-2 2-2s2 0.893 2 2c0 1.104-0.896 2-2 2zM24 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z"
+				></path>
+			</svg>
+		</button>
+		<script>
+			const toggle = document.querySelector('#toggle')
+			toggle.addEventListener(
+				'click',
+				() => {
+					if (toggle.getAttribute('aria-pressed') === 'false') {
+						toggle.setAttribute('aria-pressed', 'true')
+						toggle.classList.add('dark-mode')
+						document.body.classList.add('dark')
+					} else {
+						toggle.setAttribute('aria-pressed', 'false')
+						toggle.classList.remove('dark-mode')
+						document.body.classList.remove('dark')
+					}
+				},
+				false
+			)
+		</script>
+	</body>
+</html>
