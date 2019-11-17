@@ -36,7 +36,7 @@
 				font-weight: 900;
 				text-transform: uppercase;
 				color: #252525;
-
+				color: inherit;
 				margin-right: 0.5em;
 			}
 
@@ -94,7 +94,7 @@
 			} */
 		</style>
 	</head>
-	<body>
+	<body class="dark-scheme" class="light-scheme">
 		<label for="toggle">Dark Mode</label>
 		<button
 			class="toggle"
@@ -132,22 +132,79 @@
 			</svg>
 		</button>
 		<script>
-			const toggle = document.querySelector('#toggle')
-			toggle.addEventListener(
-				'click',
-				() => {
-					if (toggle.getAttribute('aria-pressed') === 'false') {
-						toggle.setAttribute('aria-pressed', 'true')
-						toggle.classList.add('dark-mode')
-						document.body.classList.add('dark')
-					} else {
-						toggle.setAttribute('aria-pressed', 'false')
-						toggle.classList.remove('dark-mode')
-						document.body.classList.remove('dark')
-					}
-				},
-				false
-			)
+			;(function() {
+				'use strict'
+
+				const toggle = document.querySelector('#toggle')
+
+				// check for saved 'darkMode' in localStorage */
+				const darkMode = localStorage.getItem('darkMode')
+
+				const enableDarkMode = () => {
+					toggle.setAttribute('aria-pressed', 'true')
+					toggle.classList.add('dark-mode')
+
+					// add the class to the body
+					document.body.classList.add('dark')
+					// update darkMode in localStorage
+					localStorage.setItem('darkMode', 'enabled')
+				}
+
+				const disableDarkMode = () => {
+					toggle.setAttribute('aria-pressed', 'false')
+					toggle.classList.remove('dark-mode')
+
+					// remove the class to the body
+					document.body.classList.remove('dark')
+					// update darkMode in localStorage
+					localStorage.setItem('darkMode', null)
+				}
+
+				// if the user already visited and enabled darkMode, start things off with it on
+				if (darkMode === 'enabled') {
+					enableDarkMode()
+				}
+
+				toggle.addEventListener(
+					'click',
+					() => {
+						if (toggle.getAttribute('aria-pressed') === 'false') {
+							enableDarkMode()
+						} else {
+							disableDarkMode()
+						}
+					},
+					false
+				)
+			})()
 		</script>
+		<noscript>
+			<style>
+				label {
+					display: none;
+				}
+
+				.toggle {
+					display: none;
+				}
+
+				@media (prefers-color-scheme: dark) {
+					.dark-scheme {
+						background: #292c35;
+						color: #fff;
+					}
+				}
+
+				/* @media (prefers-color-scheme: light) {
+				.light-scheme {
+					background: white;
+					color: #555;
+				}
+			} */
+			</style>
+			<body>
+				<h1>Your browser does not support JavaScript!</h1>
+			</body>
+		</noscript>
 	</body>
 </html>
