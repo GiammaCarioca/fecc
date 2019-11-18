@@ -38,6 +38,7 @@
 				color: #252525;
 				color: inherit;
 				margin-right: 0.5em;
+				cursor: pointer;
 			}
 
 			/* button */
@@ -53,6 +54,7 @@
 				justify-content: space-between;
 				align-items: center;
 				position: relative;
+				cursor: pointer;
 			}
 
 			/* thumb */
@@ -72,6 +74,17 @@
 				border-radius: 14px;
 			}
 
+			.toggle:focus::after {
+				content: '';
+				position: absolute;
+				left: 5px;
+				width: 18px;
+				height: 18px;
+				border: 2px solid #4a4a4a;
+				box-sizing: border-box;
+				border-radius: 14px;
+			}
+
 			.toggle:focus {
 				outline: none;
 			}
@@ -80,18 +93,10 @@
 				background: #032b43;
 			}
 
-			.dark-mode::before {
+			.dark-mode::before,
+			.dark-mode::after {
 				transform: translateX(28px);
 			}
-
-			/* [aria-pressed='true'] {
-				background: #032b43;
-			} */
-
-			/* .toggle:focus::before {
-				box-sizing: border-box;
-				border: 2px solid #4a4a4a;
-			} */
 		</style>
 	</head>
 	<body class="dark-scheme" class="light-scheme">
