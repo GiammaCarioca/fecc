@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="css/global.css" />
 		<script src="js/app.js" defer></script>
 	</head>
-	<body class="dark-scheme" class="light-scheme">
+	<body>
 		<main>
 			<label for="toggle">Dark Mode</label>
 			<button
@@ -55,17 +55,11 @@
 		<noscript>
 			<style>
 				@media (prefers-color-scheme: dark) {
-					.dark-scheme {
+					body {
 						background: var(--color-charcoal);
 						color: var(--color-light);
 					}
-
-					.light-scheme {
-						background: var(--color-light);
-						color: var(--color-charcoal);
-					}
 				}
-
 				main {
 					display: none;
 				}
