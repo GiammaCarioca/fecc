@@ -8,8 +8,8 @@
 
 	const enableDarkMode = () => {
 		toggle.setAttribute('aria-pressed', 'true')
+		// add the class to the button
 		toggle.classList.add('dark-mode')
-
 		// add the class to the body
 		document.body.classList.add('dark-scheme')
 		// update darkMode in localStorage
@@ -18,8 +18,8 @@
 
 	const disableDarkMode = () => {
 		toggle.setAttribute('aria-pressed', 'false')
+		// remove the class to the button
 		toggle.classList.remove('dark-mode')
-
 		// remove the class to the body
 		document.body.classList.remove('dark-scheme')
 		// update darkMode in localStorage

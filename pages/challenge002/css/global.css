@@ -24,9 +24,7 @@
 		Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
-/**
- * GLOBAL STYLES
- */
+/* GLOBAL STYLES */
 body {
 	background: var(--color-light);
 	color: var(--color-charcoal);
@@ -55,7 +53,7 @@ label {
 	margin-right: 0.5em;
 }
 
-/* button */
+/* PILL */
 .toggle {
 	border: none;
 	width: 56px;
@@ -70,7 +68,7 @@ label {
 	cursor: pointer;
 }
 
-/* thumb */
+/* THUMB */
 .toggle::before {
 	content: '';
 	position: absolute;
@@ -85,6 +83,7 @@ label {
 		var(--color-light);
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 14px;
+	transition: transform 0.2s linear;
 }
 
 .toggle:focus::after {
