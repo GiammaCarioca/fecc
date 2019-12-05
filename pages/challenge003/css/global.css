@@ -1,0 +1,89 @@
+:root {
+	--color-bg: #e5e5e5;
+	--color-pink: #faa7ed;
+	--color-navy: #0c1f72;
+	--color-navy-opaque: rgba(6, 0, 79, 0.77);
+	--color-light: #ffffff;
+	--color-dark: #252525;
+}
+
+body {
+	background-color: var(--color-bg);
+	min-height: 100vh;
+	font-family: Georgia, serif;
+	display: grid;
+	place-items: center;
+}
+
+h2,
+h3,
+h4 {
+	font-weight: 400;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 36px;
+	color: var(--color-dark);
+	margin-bottom: 20px;
+}
+
+h3,
+h4 {
+	color: var(--color-light);
+}
+
+h3 {
+	font-size: 16px;
+	line-height: 18px;
+	margin-bottom: 2px;
+}
+
+h4 {
+	font-family: Helvetica;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.team-section {
+	background-color: var(--color-light);
+	box-sizing: border-box;
+	padding: 45px 25px 40px;
+}
+
+.team-grid {
+	display: flex;
+	grid-gap: 18px;
+}
+
+.team-item-card {
+	position: relative;
+	width: 202px;
+	height: 230px;
+	overflow: hidden;
+}
+
+.description {
+	background-color: var(--color-navy);
+	position: absolute;
+	bottom: 0;
+	min-width: 100%;
+	padding: 8px;
+}
+
+img {
+	position: absolute;
+	top: -60px;
+}
+
+@media (max-width: 767px) {
+	.team-grid {
+		display: flex;
+		flex-direction: column;
+
+		@supports (display: grid) {
+			display: grid;
+			grid-template-columns: repeat(3, 202px);
+		}
+	}
+}
